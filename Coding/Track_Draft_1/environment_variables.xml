@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<configuration>
+<sites>
+	<site id="1" mastersite="1">
+		<tables>
+			<table name="publisher">1</table>
+			<table name="book">1</table>
+			<table name="customer">1</table>
+			<table name="order">1</table>
+		</tables>
+	</site>
+	<site id="2" mastersite="0">
+		<tables>
+			<table name="publisher">2</table>
+			<table name="book">2</table>
+			<table name="customer">2</table>
+			<table name="order">2</table>
+		</tables>
+	</site>
+	<site id="3" mastersite="0">
+		<tables>
+			<table name="publisher">3</table>
+			<table name="book">3</table>
+			<table name="order">3</table>
+		</tables>	
+	</site>
+	<site id="4" mastersite="0">
+		<tables>
+			<table name="publisher">4</table>
+			<table name="book">3</table>
+			<table name="order">4</table>
+		</tables>	
+	</site>
+</sites>
+</configuration>
