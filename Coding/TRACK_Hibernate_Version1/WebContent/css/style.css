@@ -1,0 +1,99 @@
+@CHARSET "UTF-8";
+/*
+Title: CSS Stylesheet
+Description: Stylesheet used to style the HTML display
+Author: Ng Yi Ying
+Date Created: 31 May, 2013
+Date Modified: 1 June, 2013
+*/
+
+a img{
+border: none;
+}
+
+hr{
+  height: 5px;
+  background-color: #000;
+}
+
+div#body{
+  margin: auto 0; 
+  text-align:center;
+  font-family: "arial";
+  font-size: 10pt;
+}
+
+div#header{
+	margin: auto 0; 
+  	text-align:center;
+}
+
+div#query{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	width: 100%;
+	text-align: center;
+	background-color: #E6FE80;
+}
+
+div#queryResult, div#costResult, div#returnResult{
+	margin-left: auto;
+	margin-right: auto;
+	width: 820px;
+	text-align: left;
+}
+
+div#original{
+	width: 400px;
+	border: 1px solid #C0C0C0 ;
+	float: left;
+	padding: 3px;
+}
+
+div#optimized{
+	width: 400px;
+	border: 1px solid #C0C0C0;
+	float: right;
+	padding: 3px;
+}
+
+.odd {
+	background-color: #F2FEBF;
+	font-family: "courier";
+	font-size: 9pt;
+	padding: 3px;
+}
+
+.even {
+	font-family: "courier";
+	font-size: 9pt;
+	padding: 3px;
+}
+
+div#original p, div#optimized p{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+div#returnResult table, td, th{
+	border: 1px solid #C0C0C0;
+	border-collapse: collapse;
+	min-width:50%;
+	padding: 3px;
+	margin: 0px;
+}
+
+.analyse {
+	color: #666;
+	font-family: "courier";
+	text-decoration: underline;
+	font-size: 10pt;
+	cursor: hand;
+}
+
+.rank {
+	font-family: "arial";
+	font-weight: bold;
+	font-size: 10pt;
+}
