@@ -16,7 +16,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.BindException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -212,6 +214,17 @@ public class DDQESLauncher implements TrackConstants, ActionListener, KeyListene
 				networkHandler.start();
 				submitButton.setEnabled(true);
 				connectNetworkHandler[site] = networkHandler;
+				
+				PrintWriter writer;
+				try {
+					writer = new PrintWriter(System.getProperty("user.dir") 
+							+ System.getProperty("file.separator") + "site" + connectingToSiteIDs[site] + ".txt");
+					writer.println(connectIPText1.getText());
+					writer.close();
+				} catch (FileNotFoundException e1) {
+					e1.printStackTrace();
+				}
+				
 				return true;
 			}
 		}
@@ -248,7 +261,7 @@ public class DDQESLauncher implements TrackConstants, ActionListener, KeyListene
 		connectPanel3 = new JPanel();
 		
 		connectIPText1 = new JTextField(12);
-		connectIPText1.setText(String.valueOf(DEFAULT_IP) + ":" + String.valueOf(DEFAULT_PORTS[0]));
+		connectIPText1.setText(String.valueOf(DEFAULT_IP) + ":" + String.valueOf(DEFAULT_PORTS[connectingToSiteIDs[0] - 1]));
 		connectButton1 = new JButton("Connect to Site " + connectingToSiteIDs[0]);
 		connectButton1.addActionListener(this);
 		connectPanel1.add(new JLabel("Connect IP: "));
@@ -257,7 +270,7 @@ public class DDQESLauncher implements TrackConstants, ActionListener, KeyListene
 		connectPanel.add(connectPanel1);
 		
 		connectIPText2 = new JTextField(12);
-		connectIPText2.setText(String.valueOf(DEFAULT_IP) + ":" + String.valueOf(DEFAULT_PORTS[1]));
+		connectIPText2.setText(String.valueOf(DEFAULT_IP) + ":" + String.valueOf(DEFAULT_PORTS[connectingToSiteIDs[1] - 1]));
 		connectButton2 = new JButton("Connect to Site " + connectingToSiteIDs[1]);
 		connectButton2.addActionListener(this);
 		connectPanel2.add(new JLabel("Connect IP: "));
@@ -266,7 +279,7 @@ public class DDQESLauncher implements TrackConstants, ActionListener, KeyListene
 		connectPanel.add(connectPanel2);
 		
 		connectIPText3 = new JTextField(12);
-		connectIPText3.setText(String.valueOf(DEFAULT_IP) + ":" + String.valueOf(DEFAULT_PORTS[2]));
+		connectIPText3.setText(String.valueOf(DEFAULT_IP) + ":" + String.valueOf(DEFAULT_PORTS[connectingToSiteIDs[2] - 1]));
 		connectButton3 = new JButton("Connect to Site " + connectingToSiteIDs[2]);
 		connectButton3.addActionListener(this);
 		connectPanel3.add(new JLabel("Connect IP: "));
