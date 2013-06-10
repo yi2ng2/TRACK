@@ -15,6 +15,7 @@ Date Modified: 6 June, 2013
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link href="css/style.css" rel="stylesheet" />
+<script type="text/javascript" src="script/script.js"></script>
 <title>Distributed Database Query Engine Service (DDQES)</title>
 </head>
 <body>
@@ -53,60 +54,76 @@ Date Modified: 6 June, 2013
 <br/>
 <div id="body">
 <div id="returnResult">
-<b>Result Set</b><br/><br/>
+<div class="titlebar" onclick="showHide('resultSetTitle', 'resultSetContent', 'Result Set');">
+<b id="resultSetTitle">[ - ] Result Set</b>
+</div><!-- end of title bar -->
+<div id="resultSetContent">
 <table>
 <tr>
-<td>Customer ID</td>
-<td>Customer Name</td>
+<th>Customer ID</th>
+<th>Customer Name</th>
 </tr>
 <tr>
 <td>2</td>
 <td>Jackie Chan</td>
 </tr>
+<tr>
+<td>3</td>
+<td>John Smith</td>
+</tr>
 </table>
+</div><!-- end of resultSetContent -->
 </div><!-- end of returnResult -->
 </div><!-- end of body -->
-
 <p style="clear: both;"></p>
+
 <div id="body">
 <div id="queryResult">
-<p><b>Processing Details</b><br/>
-</p>
+<div class="titlebar" onclick="showHide('processingDetailsTitle', 'processingDetailsContent', 'Processing Details');">
+<b id="processingDetailsTitle">[ - ] Processing Details</b>
+</div><!-- end of title bar -->
+<div id="processingDetailsContent">
 <div id="original">
-<b>Initial General Query Tree</b><br/><br/>
+<p class="title">Initial General Query Tree</p>
 <p class="odd">SELECT * FROM Customer;</p>
 <p class="even">SELECT * FROM Customer;</p>
 <p class="odd">SELECT * FROM Customer;</p>
 <p class="even">SELECT * FROM Customer;</p>
 </div>
 <div id="optimized">
-<b>Optimized Query Tree</b><br/><br/>
+<p class="title">Optimized Query Tree</p>
 <p class="odd">SELECT * FROM Customer;</p>
 <p class="even">SELECT * FROM Customer;</p>
 <p class="odd">SELECT * FROM Customer;</p>
 <p class="even">SELECT * FROM Customer;</p>
 </div>
+</div><!-- end of processingDetailsContent -->
+<p style="clear: both;"></p>
 </div><!-- end of result -->
 </div><!-- end of body -->
-<p style="clear: both;"></p><br/>
+<p style="clear: both;"></p>
+
 <div id="body">
 <div id="costResult">
-<p><b>Cost Calculation Details</b><br/>
-</p>
+<div class="titlebar" onclick="showHide('costDetailsTitle', 'costDetailsContent', 'Cost Calculation Details');">
+<b id="costDetailsTitle">[ - ] Cost Calculation Details</b>
+</div><!-- end of title bar -->
+<div id="costDetailsContent">
 <div id="original">
-<b>Initial General Query Tree</b><br/><br/>
+<p class="title">Initial General Query Tree</p>
 <p class="odd">SELECT * FROM Customer;</p>
 <p class="even">SELECT * FROM Customer;</p>
 <p class="odd">SELECT * FROM Customer;</p>
 <p class="even">SELECT * FROM Customer;</p>
 </div>
 <div id="optimized">
-<b>Optimized Query Tree</b><br/><br/>
+<p class="title">Optimized Query Tree</p>
 <p class="odd">SELECT * FROM Customer;</p>
 <p class="even">SELECT * FROM Customer;</p>
 <p class="odd">SELECT * FROM Customer;</p>
 <p class="even">SELECT * FROM Customer;</p>
 </div>
+</div><!-- end of costDetailsContent -->
 </div><!-- end of result -->
 </div><!-- end of body -->
 </body>
